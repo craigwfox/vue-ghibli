@@ -7,7 +7,7 @@
     "dev": "webpack-dev-server --config build/webpack.config.dev.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Craig Fox",
   "license": "ISC",
   "devDependencies": {
     "css-loader": "^1.0.0",
