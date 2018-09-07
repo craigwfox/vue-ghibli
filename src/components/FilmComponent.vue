@@ -14,13 +14,14 @@
     <p class="film-description">{{film.description}}</p>
   </article>
 </template>
+
 <script>
 export default {
-  props: {
-    film: {
-      type: String,
-      required: true
+  props: ['filmData'],
+    data() {
+      return {
+        film: this.filmData
+      }
     }
-  }
 }
 </script>
