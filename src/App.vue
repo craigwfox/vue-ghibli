@@ -2,10 +2,11 @@
   <section class="film-wrapper">
     <h1>Studio Ghibli Films</h1>
     <ul class="film-nav">
-      <directors-component v-for="director in directors" :key="director[director]" :director-data="director"></directors-component>
+      <li><a href="#all" data-id="all" @click="navDirector">All</a></li>
+      <directors-component @click.native="navDirector" v-for="director in directors" :key="director[director]" :director-data="director"></directors-component>
     </ul>
 
-    <film-component v-for="film in films"  :key="film.id" :film-data="film"></film-component>
+    <film-component v-if="film.show" v-for="film in films"  :key="film.id" :film-data="film"></film-component>
   </section>
 </template>
 
@@ -30,9 +31,13 @@ export default {
     axios
       .get('https://ghibliapi.herokuapp.com/films')
       .then(response => {
-      this.films = response.data
-
-      this.getDirectors()
+        let filmsArry = [];
+        response.data.forEach(element => {
+          element.show = true;
+          filmsArry.push(element);
+        })
+        this.films = filmsArry;
+        this.getDirectors();
     })
     .catch(e => {
       this.errors.push(e)
@@ -42,16 +47,48 @@ export default {
     getDirectors: function() {
       let directArry = [];
       this.films.forEach(element => {
-        let elDir = element.director;
+        let elDir = {
+          name: element.director,
+          id: element.id,
+          url: element.director.replace(/ /g,'-').toLowerCase()
+        };
 
-        if (!directArry.includes(elDir)) {
+        let dirfound = false;
+        for(let i = 0; i < directArry.length; i++) {
+          if (directArry[i].name == elDir.name) {
+            dirfound = true;
+            break;
+          }
+        }
+
+        if (!dirfound) {
           directArry.push(elDir);
         }
       });
 
       directArry.sort();
       this.directors = directArry;
-    }
+    },
+    navDirector: function(e) {
+      let curid = e.target.getAttribute('data-id');
+      console.log(curid);
+
+      if(curid === 'all') {
+        console.log('show:', curid);
+        this.films.forEach(element => {
+          element.show = true;
+        })
+      } else {
+        console.log('show:', curid);
+        this.films.forEach(element => {
+          if (element.director === curid) {
+            element.show = true;
+          } else {
+            element.show = false;
+          }
+        })
+      }
+    },
   }
 }
 </script>

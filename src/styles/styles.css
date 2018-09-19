@@ -44,6 +44,7 @@ body {
 .film-nav {
   grid-column: 1 / span 2;
   display: flex;
+  flex-wrap: wrap;
   
   margin: 0;
   padding: 2rem 2.5rem 0;
@@ -52,23 +53,26 @@ body {
 }
 
 .film-nav li {
-  margin-right: 1.5rem;
-  padding-right: 1.5rem;
-  
-  border-right: 1px solid var(--greyultralight);
-  
-  line-height: 1;
-}
-
-.film-nav li:last-child {
-  margin-right: 0;
-  padding-right: 0;
-  
-  border-right: 0;
+  line-height: 1.5;
 }
 
 .film-nav a {
+  display: inline-block;
+  
+  margin-right: 1rem;
+  padding-right: 1rem;
+  
+  border-right: 1px solid var(--greyultralight);
+
   color: var(--greyultralight);
+  line-height: 1;
+}
+
+.film-nav li:last-child a {
+  margin-right: 0;
+  padding-right: 0;
+
+  border-right: 0;
 }
 
 .film-nav a:hover,
