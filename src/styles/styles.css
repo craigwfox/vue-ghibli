@@ -46,24 +46,21 @@ body {
   list-style-type: none;
 }
 
-.film-nav li {  
-  line-height: 1.5;
-}
-
-.film-nav li.active {
-  background: var(--greymedium);
-  border-radius: .5rem;
+.film-nav li:first-child {
+  width: 100%;
 }
 
 .film-nav li.active a {
+  background: var(--greymedium);
+  border-radius: .5rem;
+
   color: var(--orange);
 }
 
 .film-nav a {
   display: inline-block;
   
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding: .5rem 1rem;
   
   color: var(--greyultralight);
   line-height: 1;
