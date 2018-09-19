@@ -1,13 +1,22 @@
 <template>
-  <section class="film-wrapper">
-    <h1>Studio Ghibli Films</h1>
-    <ul class="film-nav">
-      <li class="active"><a href="#all" data-id="all" @click="navDirector">All</a></li>
-      <directors-component @click.native="navDirector" v-for="director in directors" :key="director[director]" :director-data="director"></directors-component>
-    </ul>
+  <div class="page-wrapper">
+    <nav>
+      <h1>Studio Ghibli Films</h1>
+      <ul>
+        <li><a href="#0">Home</a></li>
+        <li><a href="#0">Movie List</a></li>
+        <li><a href="#0">Characters</a></li>
+      </ul>
+    </nav>
+    <section class="film-wrapper">
+      <ul class="film-nav">
+        <li class="active"><a href="#all" data-id="all" @click="navDirector">All</a></li>
+        <directors-component @click.native="navDirector" v-for="director in directors" :key="director[director]" :director-data="director"></directors-component>
+      </ul>
 
-    <film-component v-if="film.show" v-for="film in films"  :key="film.id" :film-data="film"></film-component>
-  </section>
+      <film-component v-if="film.show" v-for="film in films"  :key="film.id" :film-data="film"></film-component>
+    </section>
+  </div>
 </template>
 
 <script>
