@@ -1,12 +1,14 @@
 <template>
   <div class="page-wrapper">
-    <nav>
-      <h1><a href="#0">Studio Ghibli Films</a></h1>
-      <ul>
-        <li><a href="#0">Movie List</a></li>
-        <li><a href="#0">Characters</a></li>
-      </ul>
-    </nav>
+    <header class="page-header">
+      <nav class="nav-main">
+        <h1><a href="#0">Studio Ghibli Films</a></h1>
+        <ul>
+          <li><a href="#0">Movie List</a></li>
+          <li><a href="#0">Characters</a></li>
+        </ul>
+      </nav>
+    </header>
     <section class="film-wrapper">
       <ul class="film-nav">
         <li class="active"><a href="#all" data-id="all" @click="navDirector">All</a></li>

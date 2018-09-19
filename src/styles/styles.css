@@ -26,15 +26,39 @@ body {
   box-sizing: border-box;
 }
 
-.film-wrapper h1 {
-  grid-column: 1 / span 2;
-  
+/* Main Nav */
+.nav-main {
+  padding: 2rem 2.5rem;
+}
+
+.nav-main h1, .nav-main h1 a {
   margin: 0;
-  padding: 2rem 2.5rem 0;
+  padding: 0;
   
   color: var(--orange);
 }
 
+.nav-main ul {
+  display: flex;
+
+  margin: 1rem 0 0;
+  padding: 0;
+
+  list-style-type: none;
+}
+
+.nav-main li {
+}
+
+.nav-main li a {
+  display: inline-block;
+
+  padding: .75rem 1rem;
+
+  color: var(--blue);
+}
+
+/* Film nav */
 .film-nav {
   grid-column: 1 / span 2;
   display: flex;
