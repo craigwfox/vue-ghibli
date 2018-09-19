@@ -29,10 +29,14 @@ export default {
 <style scoped>
 /* film item */
 .film {
-  display: flex;
-  align-items: stretch;
-
   padding: 3rem;
+}
+
+@media (min-width: 767px) {
+  .film {
+    display: flex;
+    align-items: stretch;
+  }
 }
 
 /* Film Title */
@@ -41,10 +45,14 @@ export default {
   display: flex;
   justify-content: center;
   flex-direction: column;
+}
+
+@media (min-width: 767px) {
+  .film-title {
+    padding-right: 2rem;
   
-  padding-right: 2rem;
-  
-  border-right: 1px solid var(--orange);
+    border-right: 1px solid var(--orange);
+  }
 }
 
 .film-title h2 {
@@ -71,9 +79,15 @@ export default {
   display: flex;
   align-items: center;
   
-  margin: 0;
-  padding-left: 2rem;
+  margin: 1.5rem 0 0;
   
   font-size: 1.8rem;
+}
+
+@media (min-width: 767px) {
+  .film-description {
+    margin: 0;
+    padding-left: 2rem;
+  }
 }
 </style>
