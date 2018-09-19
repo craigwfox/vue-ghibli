@@ -1,9 +1,8 @@
 <template>
   <div class="page-wrapper">
     <nav>
-      <h1>Studio Ghibli Films</h1>
+      <h1><a href="#0">Studio Ghibli Films</a></h1>
       <ul>
-        <li><a href="#0">Home</a></li>
         <li><a href="#0">Movie List</a></li>
         <li><a href="#0">Characters</a></li>
       </ul>
