@@ -28,7 +28,7 @@ body {
 
 /* Main Nav */
 .nav-main {
-  padding: 2rem 2.5rem;
+  padding: 2rem 3rem;
 }
 
 .nav-main h1, .nav-main h1 a {
@@ -58,6 +58,11 @@ body {
   color: var(--blue);
 }
 
+/* Content */
+.content {
+  padding: 0 3rem;
+}
+
 /* Film nav */
 .film-nav {
   grid-column: 1 / span 2;
@@ -65,7 +70,7 @@ body {
   flex-wrap: wrap;
   
   margin: 0;
-  padding: 2rem 2.5rem 0;
+  padding: 2rem 0 0;
   
   list-style-type: none;
 }

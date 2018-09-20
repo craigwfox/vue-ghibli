@@ -1,4 +1,5 @@
 'use strict';
+const path = require('path');
 const webpack = require('webpack');
 const { VueLoaderPlugin } = require('vue-loader');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -12,6 +13,12 @@ module.exports = {
     hot: true,
     watchOptions: {
       poll: true
+    }
+  },
+
+  resolve: {
+    alias: {
+      vue: 'vue/dist/vue.js'
     }
   },
 

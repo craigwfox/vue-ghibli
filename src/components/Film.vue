@@ -29,7 +29,7 @@ export default {
 <style scoped>
 /* film item */
 .film {
-  padding: 3rem;
+  padding: 3rem 0;
 }
 
 @media (min-width: 767px) {
