@@ -10,6 +10,9 @@
           <li>
             <router-link to="/characters">Characters</router-link>
           </li>
+          <li>
+            <router-link to="/locations">Locations</router-link>
+          </li>
         </ul>
       </nav>
     </header>
