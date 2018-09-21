@@ -2,7 +2,7 @@
   <div class="page-wrapper">
     <header class="page-header">
       <nav class="nav-main">
-        <h1><a href="#0">Studio Ghibli Films</a></h1>
+        <a class="logo" href="#0">Studio Ghibli Films</a>
         <ul>
           <li>
             <router-link to="/">Films</router-link>

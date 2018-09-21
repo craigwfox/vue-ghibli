@@ -1,11 +1,13 @@
 
 :root {
-  --greydark: #363636;
-  --greymedium: #424242;
+  --greydark: #2e2e2e;
+  --greymedium: #556270;
   --greylight: #BCBCBC;
-  --greyultralight: #E9E9E9;
-  --orange: #FF9900;
-  --blue: #3299BB;
+  --greyultralight: #efefef;
+  --red: #C44D58;
+  --orange: #FF6B6B;
+  --green: #C7F464;
+  --blue: #4ECDC4;
   
   --widthfilmtitle: 30%;
 }
@@ -31,11 +33,13 @@ body {
   padding: 2rem 3rem;
 }
 
-.nav-main h1, .nav-main h1 a {
+.nav-main .logo {
   margin: 0;
   padding: 0;
   
   color: var(--orange);
+  font-size: 3rem;
+  font-weight: 700;
 }
 
 .nav-main ul {
