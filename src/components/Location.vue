@@ -12,13 +12,13 @@
         <li><strong>Surface Water:</strong> {{location.surface_water}}</li>
       </ul>
     </section>
-    <section>
+    <section v-if="residentList.length >= 1">
       <h3>Residents</h3>
       <ul>
         <li v-for="resident in residentList" :key="resident.id">{{resident.name}}</li>
       </ul>
     </section>
-    <section>
+    <section v-if="filmList.length > 0">
       <h3>Films</h3>
       <ul>
         <li v-for="film in filmList" :key="film.id">{{film.title}}</li>
@@ -46,16 +46,27 @@ export default {
   },
   methods: {
     apiGet: function(apiurl, arryname) {
+
       apiurl.forEach(element => {
-        axios
-          .get(element)
-          .then(response => {
-            arryname.push(response.data)
-        })
-        .catch(e => {
-          this.errors.push(e)
-        })
+        if (element.includes('http')) {
+          axios
+            .get(element)
+            .then(response => {
+              console.log(response.data)
+              arryname.push(response.data)
+          })
+          .catch(e => {
+            console.log(e);
+          })
+        } else {
+          console.log('el:', element)
+          arryname.push({
+            name: element,
+            id: element
+          })
+        }
       });
+
     }
   }
 }
